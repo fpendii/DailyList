@@ -646,7 +646,8 @@ function Show-CatOverlay {
     $screenW = [int]$screen.Width
     $screenL = [int]$screen.Left
     $screenB = [int]($screen.Bottom - $stripH)
-    $floorY  = 20.0
+    # Keep the cats close to the bottom edge without going behind the taskbar.
+    $floorY  = 38.0
 
     # Build transparent overlay window (ClipToBounds=False so bubbles never get clipped)
     $catXamlStr = '<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" ' +
